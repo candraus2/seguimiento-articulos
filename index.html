@@ -237,7 +237,88 @@ const LABELS = {
   discussion:"Discusión", conclusions:"Conclusiones", refs:"Referencias bibliográficas"
 };
 
-let students = [{"name": "DIOFREE ARGENIS GARCIA LOOR", "stages": {"title": 1, "intro": 1, "method": 1, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "JORGE WASHINGTON MIRANDA BASURTO", "stages": {"title": 1, "intro": 1, "method": 1, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "MARÍA LETTY GUILLEN PATIÑO", "stages": {"title": 1, "intro": 1, "method": 1, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "ROXANNA DEL ROSARIO LOJA QUIROZ", "stages": {"title": 1, "intro": 1, "method": 1, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "SILVIO ALEXANDER LARREA MOREIRA", "stages": {"title": 1, "intro": 1, "method": 1, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "BYRON DANIEL LÓPEZ LÓPEZ", "stages": {"title": 1, "intro": 1, "method": 0, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "CHRISTOPER JOSUÉ GARCIA MANTUANO", "stages": {"title": 1, "intro": 1, "method": 0, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "GEMA STEFANIA BAILON GILER", "stages": {"title": 1, "intro": 1, "method": 0, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "ISISMAR CHIQUINQUIRA SALAS CARRASCO", "stages": {"title": 1, "intro": 1, "method": 0, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "JELENA STEFANIA AVEIGA DEYANÓN", "stages": {"title": 1, "intro": 1, "method": 0, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "JOHN DALEMBERG DAZA MONTIEL", "stages": {"title": 1, "intro": 1, "method": 0, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "NATHALY STEFANIA ALBAN REYES", "stages": {"title": 1, "intro": 1, "method": 0, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "ANDREA LEONOR CEDEÑO VALLE", "stages": {"title": 0, "intro": 0, "method": 0, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "BRYAN STEVEN CERVANTES CHOEZ", "stages": {"title": 0, "intro": 0, "method": 0, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "ERIKA VALERIA ALCIVAR PALMA", "stages": {"title": 0, "intro": 0, "method": 0, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "MAYRA ALEJANDRA ORTEGA DELGADO", "stages": {"title": 0, "intro": 0, "method": 0, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}];
+const FALLBACK_STUDENTS = [{"name": "DIOFREE ARGENIS GARCIA LOOR", "stages": {"title": 1, "intro": 1, "method": 1, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "JORGE WASHINGTON MIRANDA BASURTO", "stages": {"title": 1, "intro": 1, "method": 1, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "MARÍA LETTY GUILLEN PATIÑO", "stages": {"title": 1, "intro": 1, "method": 1, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "ROXANNA DEL ROSARIO LOJA QUIROZ", "stages": {"title": 1, "intro": 1, "method": 1, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "SILVIO ALEXANDER LARREA MOREIRA", "stages": {"title": 1, "intro": 1, "method": 1, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "BYRON DANIEL LÓPEZ LÓPEZ", "stages": {"title": 1, "intro": 1, "method": 0, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "CHRISTOPER JOSUÉ GARCIA MANTUANO", "stages": {"title": 1, "intro": 1, "method": 0, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "GEMA STEFANIA BAILON GILER", "stages": {"title": 1, "intro": 1, "method": 0, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "ISISMAR CHIQUINQUIRA SALAS CARRASCO", "stages": {"title": 1, "intro": 1, "method": 0, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "JELENA STEFANIA AVEIGA DEYANÓN", "stages": {"title": 1, "intro": 1, "method": 0, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "JOHN DALEMBERG DAZA MONTIEL", "stages": {"title": 1, "intro": 1, "method": 0, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "NATHALY STEFANIA ALBAN REYES", "stages": {"title": 1, "intro": 1, "method": 0, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "ANDREA LEONOR CEDEÑO VALLE", "stages": {"title": 0, "intro": 0, "method": 0, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "BRYAN STEVEN CERVANTES CHOEZ", "stages": {"title": 0, "intro": 0, "method": 0, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "ERIKA VALERIA ALCIVAR PALMA", "stages": {"title": 0, "intro": 0, "method": 0, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}, {"name": "MAYRA ALEJANDRA ORTEGA DELGADO", "stages": {"title": 0, "intro": 0, "method": 0, "results": 0, "discussion": 0, "conclusions": 0, "refs": 0}}];
+let students = FALLBACK_STUDENTS.map(s => ({...s, stages:{...s.stages}}));
+
+const SHEET_ID = "13FvYZTsmqfpdpBC_KQKWJjfofpzuXCHStDW7w-UPv8c";
+const SHEET_NAME = "Seguimiento";
+const SHEET_RANGE = "B9:I1000";
+let syncTimeout = null;
+
+function isYes(value) {
+  return String(value ?? "").trim().toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g,"") === "si";
+}
+
+window.receiveSheetData = function(response) {
+  try {
+    if (!response || response.status === "error" || !response.table) {
+      throw new Error("Respuesta inválida de Google Sheets");
+    }
+
+    const rows = response.table.rows || [];
+    const loaded = rows
+      .map(r => (r.c || []).map(c => c ? c.v : ""))
+      .filter(r => r[0]);
+
+    if (!loaded.length) throw new Error("La hoja no devolvió estudiantes");
+
+    students = loaded.map(r => ({
+      name: String(r[0]).trim(),
+      stages: {
+        title: isYes(r[1]) ? 1 : 0,
+        intro: isYes(r[2]) ? 1 : 0,
+        method: isYes(r[3]) ? 1 : 0,
+        results: isYes(r[4]) ? 1 : 0,
+        discussion: isYes(r[5]) ? 1 : 0,
+        conclusions: isYes(r[6]) ? 1 : 0,
+        refs: isYes(r[7]) ? 1 : 0
+      }
+    }));
+
+    clearTimeout(syncTimeout);
+    updateStats();
+    render();
+
+    const now = new Date();
+    document.getElementById("lastUpdate").textContent =
+      "Google Sheets · " +
+      new Intl.DateTimeFormat("es-EC", {hour:"2-digit", minute:"2-digit"}).format(now);
+  } catch (err) {
+    console.error(err);
+    document.getElementById("lastUpdate").textContent =
+      "No se pudo leer Google Sheets";
+  }
+};
+
+function loadGoogleSheet() {
+  document.getElementById("lastUpdate").textContent =
+    "Sincronizando con Google Sheets…";
+
+  const old = document.getElementById("sheet-json-p");
+  if (old) old.remove();
+
+  const script = document.createElement("script");
+  script.id = "sheet-json-p";
+
+  const tqx = encodeURIComponent("out:json;responseHandler:receiveSheetData");
+  script.src =
+    `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=${tqx}&sheet=${encodeURIComponent(SHEET_NAME)}&range=${encodeURIComponent(SHEET_RANGE)}&_=${Date.now()}`;
+
+  script.onerror = () => {
+    clearTimeout(syncTimeout);
+    document.getElementById("lastUpdate").textContent =
+      "Google Sheets no disponible · mostrando respaldo";
+  };
+
+  document.body.appendChild(script);
+
+  clearTimeout(syncTimeout);
+  syncTimeout = setTimeout(() => {
+    document.getElementById("lastUpdate").textContent =
+      "Google Sheets no disponible · mostrando respaldo";
+  }, 8000);
+}
 
 function progress(s) {
   return Object.entries(WEIGHTS).reduce((sum,[key,w]) => sum + (s.stages[key] ? w : 0), 0);
@@ -333,16 +414,14 @@ document.getElementById("closeDialog").addEventListener("click",()=>document.get
 document.getElementById("studentDialog").addEventListener("click",e=>{
   if(e.target === e.currentTarget) e.currentTarget.close();
 });
-document.getElementById("lastUpdate").textContent = "Actualizado " + new Intl.DateTimeFormat("es-EC",{day:"numeric",month:"long",year:"numeric"}).format(new Date());
 updateStats();
 render();
+loadGoogleSheet();
 
-/*
-  SIGUIENTE ETAPA:
-  Cuando la hoja sea una Google Sheet nativa/publicada, este bloque de datos
-  se reemplazará por una lectura automática de la hoja. El diseño y el ranking
-  ya están preparados para ello.
-*/
+setInterval(loadGoogleSheet, 60000);
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") loadGoogleSheet();
+});
 </script>
 </body>
 </html>
